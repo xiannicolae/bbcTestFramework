@@ -5,29 +5,49 @@
  */
 package steps_definition;
 
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import driver.DriverInteractions;
+import driver.Driver;
 import driver.DriverUtils;
+import junit.framework.AssertionFailedError;
+import utils.GlobalHooks;
+import utils.javaUtils;
+
+import java.io.IOException;
+import java.text.ParseException;
 
 
 /**
- *
  * @author christiann
  */
 public class backgroundSteps {
 
     DriverUtils DriverUtils = new DriverUtils();
-    DriverInteractions DriverInteractions = new DriverInteractions();
-
 
     @Before
     public void openNewBrowser() {
-        DriverUtils.setBrowser(System.getProperty("browser"));
+        Driver.getInstance();
+        DriverUtils.maxWindow();
     }
 
+    /**
+     * This method will create a screenshot each time when a scenario fails.
+     * Throw Exceptions list can be extended.
+     *
+     * @param scenario
+     * @throws IOException
+     * @throws ParseException
+     * @throws AssertionFailedError
+     */
     @After
+    public void takeScreenshotOnFailedScenario(Scenario scenario) throws IOException, ParseException, AssertionFailedError {
+        if (scenario.isFailed()) javaUtils.takeScreenshotOnError();
+    }
+
+    @After("@quit")
     public void closingBrowser() {
         DriverUtils.endSession();
     }
+
 }

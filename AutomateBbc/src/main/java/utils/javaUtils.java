@@ -2,10 +2,9 @@ package utils;
 
 import driver.DriverUtils;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.TakesScreenshot;
-
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -17,19 +16,18 @@ public class javaUtils {
 
     public static void takeScreenshotOnError() throws IOException {
         File scrFile = du.test();
-        FileUtils.copyFile(scrFile, new File("C:\\Users\\christiann\\Documents\\NetBeansProjects\\AutomateBbc\\screenshots\\screenShot1.png"));
+        FileUtils.copyFile(scrFile, new File("C:\\Users\\christiann\\Documents\\NetBeansProjects\\AutomateBbc\\screenshots\\", dateNowToString() + ".png"));
         System.out.println("Screenshot is captured for failed testcase");
     }
 
 
-    public static String currentDateAndTime(){
-        String result;
-
-        Date dNow = new Date();
-        result = dNow.toString();
-
-        return result;
+    public static Date currentDateAndTime(){
+        return new Date();
     }
 
+    public static String dateNowToString() {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH_mm_ss");
+        return formatter.format(currentDateAndTime());
+    }
 
 }

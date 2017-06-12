@@ -6,13 +6,42 @@
 package driver;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 /**
- *
  * @author christiann
  */
-class Driver {
+public class Driver {
 
-    protected static WebDriver driver;
+    private static WebDriver driverInstance = null;
 
+    protected Driver() {
+    }
+
+    public static WebDriver getInstance() {
+        if (driverInstance == null) {
+            synchronized (Driver.class) {
+                String browser = System.getProperty("browser");
+
+                switch (browser.toLowerCase()) {
+                    case "firefox":
+                        driverInstance = new FirefoxDriver();
+                        break;
+                    case "ie":
+                        driverInstance = new InternetExplorerDriver();
+                        break;
+                    case "safari":
+                        driverInstance = new SafariDriver();
+                        break;
+                    default:
+                        driverInstance = new ChromeDriver();
+                        break;
+                }
+            }
+        }
+        return driverInstance;
+    }
 }
