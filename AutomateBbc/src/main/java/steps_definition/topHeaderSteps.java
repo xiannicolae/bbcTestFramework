@@ -4,7 +4,6 @@ import cucumber.api.java.en.When;
 import cucumber.api.java.en.And;
 import page_n_components.components.components_implementation.topHeaderImpl;
 import page_n_components.components.components_interface.topHeaderInterface;
-import utils.javaUtils;
 
 import static page_n_components.components.components_implementation.topHeaderImpl.*;
 
@@ -18,7 +17,6 @@ public class topHeaderSteps {
 
     @When("^I click '(HOME|NEWS|SPORT|WEATHER|SHOP|EARTH|TRAVEL|CAPITAL|MORE)' on the upper navigation bar$")
     public void clickOnUpperNav(MainMenuSections headerType) {
-        System.out.println(javaUtils.currentDateAndTime());
         topHeaderInterface.clickMenuSection(headerType);
     }
 

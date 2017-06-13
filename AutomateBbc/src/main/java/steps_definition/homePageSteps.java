@@ -18,7 +18,6 @@ public class homePageSteps {
     @Given("^I am on the BBC Home page$")
     public void goOnTheHomePage(){
         homePageInterface.goToHomePage();
-        DriverUtils.maxWindow(); //might consider moving to the browser step
 
         assertTrue(homePageInterface.getHomePageTitle().contains("Welcome to BBC"));
     }

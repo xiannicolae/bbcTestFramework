@@ -14,51 +14,49 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
- *
  * @author christiann
  */
-public class DriverInteractions extends Driver {
-    
+public class DriverInteractions {
+
     private WebDriverWait wait;
-    
+
     // Wait methods
     public WebDriverWait waitDriver(int timeout) {
-        wait = new WebDriverWait(driver, timeout);
+        wait = new WebDriverWait(Driver.getInstance(), timeout);
         return wait;
     }
-    
+
     public void waitFor(By elementLocator) {
         waitDriver(20).until(ExpectedConditions.elementToBeClickable(elementLocator));
     }
-    
+
     public void waitForPageToLoad() {
-    Wait<WebDriver> wp1 = new WebDriverWait(driver, 30);
-    wp1.until((WebDriver driver1) -> {
-        System.out.println("Current Window State       : " + String.valueOf(((JavascriptExecutor) driver1).executeScript("return document.readyState")));
-        return String.valueOf(((JavascriptExecutor) driver1).executeScript("return document.readyState")).equals("complete");
-    });
+        Wait<WebDriver> wp1 = new WebDriverWait(Driver.getInstance(), 30);
+        wp1.until((WebDriver driver1) -> {
+            System.out.println("Current Window State       : " + String.valueOf(((JavascriptExecutor) driver1).executeScript("return document.readyState")));
+            return String.valueOf(((JavascriptExecutor) driver1).executeScript("return document.readyState")).equals("complete");
+        });
     }
-    
+
     // Interaction methods
     public void clickOn(By elementLocator) {
-        driver.findElement(elementLocator).click();
+        Driver.getInstance().findElement(elementLocator).click();
     }
-    
+
     public void typeIn(By inputField, String text) {
-        driver.findElement(inputField).sendKeys(text);
+        Driver.getInstance().findElement(inputField).sendKeys(text);
     }
-    
+
     public boolean existsElement(By elementLocator) {
         try {
-            return driver.findElement(elementLocator).isDisplayed();
+            return Driver.getInstance().findElement(elementLocator).isDisplayed();
         } catch (NoSuchElementException e) {
             return false;
         }
     }
-    
+
     public String getElementText(By elementLocator) {
-        return driver.findElement(elementLocator).getText();
+        return Driver.getInstance().findElement(elementLocator).getText();
     }
-    
-    
+
 }
