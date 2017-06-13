@@ -18,11 +18,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class DriverInteractions {
 
-    private WebDriverWait wait;
-
     // Wait methods
-    public WebDriverWait waitDriver(int timeout) {
-        wait = new WebDriverWait(Driver.getInstance(), timeout);
+    private WebDriverWait waitDriver(int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getInstance(), timeout);
         return wait;
     }
 

@@ -6,15 +6,12 @@
 package page_n_components.pages.page_interface;
 
 /**
- *
  * @author christiann
  */
-public interface homePageInterface {
-    
+public interface HomePageInterface {
+
     void goToHomePage();
-    
+
     String getHomePageTitle();
-    
-    void goToSportsPage();
-    
+
 }

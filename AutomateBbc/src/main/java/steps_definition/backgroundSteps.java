@@ -11,8 +11,7 @@ import cucumber.api.java.Before;
 import driver.Driver;
 import driver.DriverUtils;
 import junit.framework.AssertionFailedError;
-import utils.GlobalHooks;
-import utils.javaUtils;
+import utils.JavaUtils;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -21,9 +20,9 @@ import java.text.ParseException;
 /**
  * @author christiann
  */
-public class backgroundSteps {
+public class BackgroundSteps {
 
-    DriverUtils DriverUtils = new DriverUtils();
+    private final DriverUtils DriverUtils = new DriverUtils();
 
     @Before
     public void openNewBrowser() {
@@ -42,7 +41,7 @@ public class backgroundSteps {
      */
     @After
     public void takeScreenshotOnFailedScenario(Scenario scenario) throws IOException, ParseException, AssertionFailedError {
-        if (scenario.isFailed()) javaUtils.takeScreenshotOnError();
+        if (scenario.isFailed()) JavaUtils.takeScreenshotOnError();
     }
 
     @After("@quit")

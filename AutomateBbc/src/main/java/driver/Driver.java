@@ -18,7 +18,7 @@ public class Driver {
 
     private static WebDriver driverInstance = null;
 
-    protected Driver() {
+    private Driver() {
     }
 
     public static WebDriver getInstance() {

@@ -7,25 +7,19 @@ package page_n_components.components.components_implementation;
 
 import driver.DriverInteractions;
 import org.openqa.selenium.By;
-import page_n_components.components.components_interface.topHeaderInterface;
+import page_n_components.components.components_interface.TopHeaderInterface;
 
 /**
- *
  * @author christiann
  */
-public class topHeaderImpl implements topHeaderInterface {
-    
-    DriverInteractions di = new DriverInteractions();
+public class TopHeaderImpl implements TopHeaderInterface {
 
     // ENTIRE COMPONENT
     private final static By HEADER_BAR_SECTION = By.id("orb-header");
-
     // LOGO ELEMENT
     private final static By BBC_HEADER_LOGO = By.cssSelector(".orb-nav-theme-dynamic");
-
     // SIGN IN ELEMENT
     private final static By SIGN_IN = By.id("mybbc-wrapper");
-
     //MENU ELEMENTS
     private final static By NAV_LINKS = By.id("orb-nav-links");
     private final static By NEWS_MENU = By.cssSelector(".orb-nav-newsdotcom.orb-w");
@@ -37,10 +31,8 @@ public class topHeaderImpl implements topHeaderInterface {
     private final static By CAPITAL_MENU = By.cssSelector(".orb-nav-capital.orb-w");
     private final static By CULTURE_MENU = By.cssSelector(".orb-nav-culture.orb-w");
     private final static By MORE_MENU = By.id("orb-nav-more");
-
     // SEARCH ELEMENT
     private final static By SEARCH = By.cssSelector(".orb-nav-section.orb-nav-search");
-
     // MORE MENU ELEMENTS
     private final static By MORE_MENU_ARROW = By.cssSelector(".orb-icon.orb-icon-arrow");
     private final static By MORE_SECTION_TITLE = By.id("orb-panel-more-title");
@@ -60,36 +52,38 @@ public class topHeaderImpl implements topHeaderInterface {
     private final static By MORE_SECTION_TASTER_MENU = By.cssSelector("a[href='/taster']");
     private final static By MORE_SECTION_NATURE_MENU = By.cssSelector(".orb-nav-nature.orb-w");
     private final static By MORE_SECTION_LOCAL_MENU = By.cssSelector(".orb-nav-local");
-
     // SEARCH ELEMENTS
     private final static By SEARCH_INPUT = By.id("orb-search-q");
     private final static By SEARCH_BUTTON = By.id("orb-search-button");
     private final static By SEARCH_PANEL = By.cssSelector(".se-searchbox-panel");
     private final static By SEARCH_PANEL_BUTTON = By.cssSelector(".se-searchbox__submit");
     private final static By SEARCH_PANEL_CLOSE = By.cssSelector(".se-searchbox__clear.se-searchbox__clear--visible");
-
     // MAIN WEB SECTION
     private final static By SUGGESTIONS = By.cssSelector(".se-suggestions-container__title.se-hidden-s");
+    private final DriverInteractions di = new DriverInteractions();
 
     @Override
     public void clickMenuSection(MainMenuSections mainMenu) {
         switch (mainMenu) {
-            case SPORT:     clickOnSportsMenu();
-                            break;
-            case MORE:      clickOnMoreMenu();
-                            break;
-            default:
+            case SPORT:
+                clickOnSportsMenu();
                 break;
+            case MORE:
+                clickOnMoreMenu();
+                break;
+            default:
+                throw new IllegalArgumentException(mainMenu + " Main menu selection doesn't exists!");
         }
     }
 
     @Override
     public void clickMoreMenuSection(MoreMenuSections moreMenu) {
         switch (moreMenu) {
-            case TV:        clickOnMoreMenuTV();
-                            break;
-            default:
+            case TV:
+                clickOnMoreMenuTV();
                 break;
+            default:
+                throw new IllegalArgumentException(moreMenu + " Extended More menu selection doesn't exists!");
         }
     }
 
