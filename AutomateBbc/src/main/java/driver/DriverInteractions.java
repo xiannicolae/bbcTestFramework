@@ -19,12 +19,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class DriverInteractions {
 
     // Wait methods
-    private WebDriverWait waitDriver(int timeout) {
+    private static WebDriverWait waitDriver(int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getInstance(), timeout);
         return wait;
     }
 
-    public void waitFor(By elementLocator) {
+    public static void waitFor(By elementLocator) {
         waitDriver(20).until(ExpectedConditions.elementToBeClickable(elementLocator));
     }
 
@@ -37,7 +37,7 @@ public class DriverInteractions {
     }
 
     // Interaction methods
-    public void clickOn(By elementLocator) {
+    public static void clickOn(By elementLocator) {
         Driver.getInstance().findElement(elementLocator).click();
     }
 
@@ -45,7 +45,7 @@ public class DriverInteractions {
         Driver.getInstance().findElement(inputField).sendKeys(text);
     }
 
-    public boolean existsElement(By elementLocator) {
+    public static boolean existsElement(By elementLocator) {
         try {
             return Driver.getInstance().findElement(elementLocator).isDisplayed();
         } catch (NoSuchElementException e) {
@@ -53,7 +53,7 @@ public class DriverInteractions {
         }
     }
 
-    public String getElementText(By elementLocator) {
+    public static String getElementText(By elementLocator) {
         return Driver.getInstance().findElement(elementLocator).getText();
     }
 

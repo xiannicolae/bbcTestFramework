@@ -13,13 +13,12 @@ import static junit.framework.Assert.assertTrue;
 public class HomePageSteps {
 
     private HomePage homePage = new HomePage();
-    private DriverUtils driverUtils = new DriverUtils();
 
     @Given("^I am on the BBC Home page$")
     public void goOnTheHomePage() {
         homePage.goToHomePage();
 
         assertTrue(homePage.getHomePageTitle().contains("Welcome to BBC"));
-        assertTrue(homePage.getUrl().matches(driverUtils.getCurrentPageUrl()));
+        assertTrue(homePage.getUrl().matches(DriverUtils.getCurrentPageUrl()));
     }
 }

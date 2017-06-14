@@ -14,8 +14,6 @@ import page_n_components.components.components_interface.BaseComponent;
  */
 public class UpperMenu implements BaseComponent {
 
-    private final DriverInteractions driverInteractions = new DriverInteractions();
-
     // ENTIRE COMPONENT
     private final static By HEADER_BAR_SECTION = By.id("orb-header");
     // LOGO ELEMENT
@@ -88,18 +86,18 @@ public class UpperMenu implements BaseComponent {
     }
 
     private void clickOnSportsMenu() {
-        driverInteractions.waitFor(SPORT_MENU);
-        driverInteractions.clickOn(SPORT_MENU);
+        DriverInteractions.waitFor(SPORT_MENU);
+        DriverInteractions.clickOn(SPORT_MENU);
     }
 
     private void clickOnMoreMenu() {
-        driverInteractions.waitFor(MORE_MENU);
-        driverInteractions.clickOn(MORE_MENU);
+        DriverInteractions.waitFor(MORE_MENU);
+        DriverInteractions.clickOn(MORE_MENU);
     }
 
     private void clickOnMoreMenuTV() {
-        driverInteractions.waitFor(MORE_SECTION_TV_MENU);
-        driverInteractions.clickOn(MORE_SECTION_TV_MENU);
+        DriverInteractions.waitFor(MORE_SECTION_TV_MENU);
+        DriverInteractions.clickOn(MORE_SECTION_TV_MENU);
     }
 
     public enum MainMenuSections {

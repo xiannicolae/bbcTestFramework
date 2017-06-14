@@ -15,45 +15,45 @@ import java.io.File;
  */
 public class DriverUtils {
 
-    public File test() {
+    public static File test() {
         return ((TakesScreenshot) Driver.getInstance()).getScreenshotAs(OutputType.FILE);
     }
 
-    public void endSession() {
+    public static void endSession() {
         Driver.getInstance().quit();
     }
 
-    public void closeBrowserTab() {
+    public static void closeBrowserTab() {
         Driver.getInstance().close();
     }
 
-    public void resetCookies() {
+    public static void resetCookies() {
         Driver.getInstance().manage().deleteAllCookies();
     }
 
-    public void maxWindow() {
+    public static void maxWindow() {
         Driver.getInstance().manage().window().maximize();
     }
 
-    public String getCurrentPageUrl() {
+    public static String getCurrentPageUrl() {
         return Driver.getInstance().getCurrentUrl();
     }
 
     // Navigation methods
 
-    public void refreshPage() {
+    public static void refreshPage() {
         Driver.getInstance().navigate().refresh();
     }
 
-    public void goForward() {
+    public static void goForward() {
         Driver.getInstance().navigate().forward();
     }
 
-    public void goBack() {
+    public static void goBack() {
         Driver.getInstance().navigate().back();
     }
 
-    public void goToUrl(String url) {
+    public static void goToUrl(String url) {
         Driver.getInstance().get(url);
     }
 

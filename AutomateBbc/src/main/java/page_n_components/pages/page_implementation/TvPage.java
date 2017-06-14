@@ -9,14 +9,12 @@ import page_n_components.pages.page_interface.BasePage;
  */
 public class TvPage implements BasePage {
 
-    private final DriverInteractions driverInteractions = new DriverInteractions();
-
     private static final String BBC_TV_URL = "http://www.bbc.com/tv/";
     private static final By TV_BRAND = By.cssSelector(".site-brand-lining [href='/tv']");
 
 
     public boolean tvBrandExists() {
-        return driverInteractions.existsElement(TV_BRAND);
+        return DriverInteractions.existsElement(TV_BRAND);
     }
 
     @Override

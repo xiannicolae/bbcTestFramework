@@ -22,12 +22,10 @@ import java.text.ParseException;
  */
 public class BackgroundSteps {
 
-    private final DriverUtils driverUtils = new DriverUtils();
-
     @Before
     public void openNewBrowser() {
         Driver.getInstance();
-        driverUtils.maxWindow();
+        DriverUtils.maxWindow();
     }
 
     /**
@@ -46,7 +44,7 @@ public class BackgroundSteps {
 
     @After("@quit")
     public void closingBrowser() {
-        driverUtils.endSession();
+        DriverUtils.endSession();
     }
 
 }
