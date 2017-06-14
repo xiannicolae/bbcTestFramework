@@ -2,8 +2,7 @@ package steps_definition;
 
 import cucumber.api.java.en.Then;
 import driver.DriverUtils;
-import page_n_components.pages.page_implementation.SportsPageImpl;
-import page_n_components.pages.page_interface.SportsPageInterface;
+import page_n_components.pages.page_implementation.SportsPage;
 
 
 import static junit.framework.Assert.assertTrue;
@@ -13,13 +12,13 @@ import static junit.framework.Assert.assertTrue;
  */
 public class SportsPageSteps {
 
-    private final DriverUtils DriverUtils = new DriverUtils();
-    private final SportsPageInterface SportsPageInterface = new SportsPageImpl();
+    private final DriverUtils driverUtils = new DriverUtils();
+    private final SportsPage sportPage = new SportsPage();
 
 
     @Then("^I should be redirected to the Sport page$")
     public void checkIfOnSportsPage() {
-        assertTrue(SportsPageInterface.sportsPageUrl().matches(DriverUtils.getCurrentPageUrl()));
-        assertTrue(SportsPageInterface.sportsLogoExists());
+        assertTrue(sportPage.getUrl().matches(driverUtils.getCurrentPageUrl()));
+        assertTrue(sportPage.sportsLogoExists());
     }
 }

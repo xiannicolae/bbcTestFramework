@@ -7,12 +7,14 @@ package page_n_components.components.components_implementation;
 
 import driver.DriverInteractions;
 import org.openqa.selenium.By;
-import page_n_components.components.components_interface.TopHeaderInterface;
+import page_n_components.components.components_interface.BaseComponent;
 
 /**
  * @author christiann
  */
-public class TopHeaderImpl implements TopHeaderInterface {
+public class UpperMenu implements BaseComponent {
+
+    private final DriverInteractions driverInteractions = new DriverInteractions();
 
     // ENTIRE COMPONENT
     private final static By HEADER_BAR_SECTION = By.id("orb-header");
@@ -60,9 +62,8 @@ public class TopHeaderImpl implements TopHeaderInterface {
     private final static By SEARCH_PANEL_CLOSE = By.cssSelector(".se-searchbox__clear.se-searchbox__clear--visible");
     // MAIN WEB SECTION
     private final static By SUGGESTIONS = By.cssSelector(".se-suggestions-container__title.se-hidden-s");
-    private final DriverInteractions di = new DriverInteractions();
 
-    @Override
+
     public void clickMenuSection(MainMenuSections mainMenu) {
         switch (mainMenu) {
             case SPORT:
@@ -72,36 +73,45 @@ public class TopHeaderImpl implements TopHeaderInterface {
                 clickOnMoreMenu();
                 break;
             default:
-                throw new IllegalArgumentException(mainMenu + " Main menu selection doesn't exists!");
+                throw new IllegalArgumentException(mainMenu + " method is not implemented yet!");
         }
     }
 
-    @Override
     public void clickMoreMenuSection(MoreMenuSections moreMenu) {
         switch (moreMenu) {
             case TV:
                 clickOnMoreMenuTV();
                 break;
             default:
-                throw new IllegalArgumentException(moreMenu + " Extended More menu selection doesn't exists!");
+                throw new IllegalArgumentException(moreMenu + " method is not implemented yet!");
         }
     }
 
     private void clickOnSportsMenu() {
-        di.waitFor(SPORT_MENU);
-        di.clickOn(SPORT_MENU);
+        driverInteractions.waitFor(SPORT_MENU);
+        driverInteractions.clickOn(SPORT_MENU);
     }
 
     private void clickOnMoreMenu() {
-        di.waitFor(MORE_MENU);
-        di.clickOn(MORE_MENU);
+        driverInteractions.waitFor(MORE_MENU);
+        driverInteractions.clickOn(MORE_MENU);
     }
 
     private void clickOnMoreMenuTV() {
-        di.waitFor(MORE_SECTION_TV_MENU);
-        di.clickOn(MORE_SECTION_TV_MENU);
+        driverInteractions.waitFor(MORE_SECTION_TV_MENU);
+        driverInteractions.clickOn(MORE_SECTION_TV_MENU);
     }
 
+    public enum MainMenuSections {
+        HOME, NEWS, SPORT, WEATHER, SHOP,
+        EARTH, TRAVEL, CAPITAL, MORE
+    }
+
+    public enum MoreMenuSections {
+        CULTURE, AUTOS, FUTURE, TV, RADIO, CBBC,
+        CBEEBIES, FOOD, IWONDER, BITESIZE, MUSIC,
+        ARTS, MAKE_IT_DIGITAL, TASTER, NATURE, LOCAL
+    }
 }
 
 

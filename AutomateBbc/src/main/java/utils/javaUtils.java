@@ -13,14 +13,15 @@ import java.util.Date;
  */
 public class JavaUtils {
 
-    private static final DriverUtils du = new DriverUtils();
+    private JavaUtils() {}
+
+    private static final DriverUtils driverUtils = new DriverUtils();
 
     public static void takeScreenshotOnError() throws IOException {
-        File scrFile = du.test();
+        File scrFile = driverUtils.test();
         FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "\\screenshots\\", dateNowToString() + ".png"));
         System.out.println("Screenshot is captured for failed testcase");
     }
-
 
     private static Date currentDateAndTime() {
         return new Date();

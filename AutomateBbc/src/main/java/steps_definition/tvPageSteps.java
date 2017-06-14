@@ -1,10 +1,8 @@
 package steps_definition;
 
 import cucumber.api.java.en.Then;
-import driver.DriverInteractions;
 import driver.DriverUtils;
-import page_n_components.pages.page_implementation.TvPageImpl;
-import page_n_components.pages.page_interface.TvPageInterface;
+import page_n_components.pages.page_implementation.TvPage;
 
 import static junit.framework.Assert.assertTrue;
 
@@ -13,14 +11,13 @@ import static junit.framework.Assert.assertTrue;
  */
 public class TvPageSteps {
 
-    DriverInteractions DriverInteractions = new DriverInteractions();
-    private final DriverUtils DriverUtils = new DriverUtils();
-    private final TvPageInterface TvPageInterface = new TvPageImpl();
+    private final DriverUtils driverUtils = new DriverUtils();
+    private final TvPage tvPage = new TvPage();
 
 
     @Then("^I should be redirected to the TV page$")
     public void checkIfOnTvPage() {
-        assertTrue(TvPageInterface.tvPageUrl().matches(DriverUtils.getCurrentPageUrl()));
-        assertTrue(TvPageInterface.tvBrandExists());
+        assertTrue(tvPage.getUrl().matches(driverUtils.getCurrentPageUrl()));
+        assertTrue(tvPage.tvBrandExists());
     }
 }

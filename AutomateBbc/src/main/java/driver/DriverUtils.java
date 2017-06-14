@@ -15,7 +15,6 @@ import java.io.File;
  */
 public class DriverUtils {
 
-
     public File test() {
         return ((TakesScreenshot) Driver.getInstance()).getScreenshotAs(OutputType.FILE);
     }

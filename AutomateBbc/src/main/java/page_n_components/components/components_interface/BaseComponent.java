@@ -3,14 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package page_n_components.pages.page_interface;
+package page_n_components.components.components_interface;
 
 /**
  * @author christiann
  */
-public interface SportsPageInterface {
+public interface BaseComponent {
 
-    boolean sportsLogoExists();
-
-    String sportsPageUrl();
 }
