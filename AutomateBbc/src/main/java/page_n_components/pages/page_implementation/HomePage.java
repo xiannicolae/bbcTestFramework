@@ -8,29 +8,27 @@ package page_n_components.pages.page_implementation;
 import driver.DriverInteractions;
 import driver.DriverUtils;
 import org.openqa.selenium.By;
-import page_n_components.components.components_implementation.TopHeaderImpl;
-import page_n_components.pages.page_interface.HomePageInterface;
-import page_n_components.components.components_interface.TopHeaderInterface;
-
-import static page_n_components.components.components_interface.TopHeaderInterface.MainMenuSections.*;
+import page_n_components.pages.page_interface.BasePage;
 
 /**
  * @author christiann
  */
-public class HomePageImpl implements HomePageInterface {
+public class HomePage implements BasePage {
 
     private static final String BBC_URL = "http://www.bbc.com/";
     private static final By HOMEPAGE_TITLE = By.cssSelector("section[data-wwhp-module='header'] h2");
-    private final DriverInteractions di = new DriverInteractions();
-    private final DriverUtils du = new DriverUtils();
 
-    @Override
+
     public void goToHomePage() {
-        du.goToUrl(BBC_URL);
+        DriverUtils.goToUrl(BBC_URL);
+    }
+
+    public String getHomePageTitle() {
+        return DriverInteractions.getElementText(HOMEPAGE_TITLE);
     }
 
     @Override
-    public String getHomePageTitle() {
-        return di.getElementText(HOMEPAGE_TITLE);
+    public String getUrl() {
+        return BBC_URL;
     }
 }

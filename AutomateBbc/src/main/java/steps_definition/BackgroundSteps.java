@@ -22,8 +22,6 @@ import java.text.ParseException;
  */
 public class BackgroundSteps {
 
-    private final DriverUtils DriverUtils = new DriverUtils();
-
     @Before
     public void openNewBrowser() {
         Driver.getInstance();
