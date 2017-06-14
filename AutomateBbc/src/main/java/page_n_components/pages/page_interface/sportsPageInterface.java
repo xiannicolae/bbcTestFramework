@@ -6,12 +6,11 @@
 package page_n_components.pages.page_interface;
 
 /**
- *
  * @author christiann
  */
-public interface sportsPageInterface {
-    
+public interface SportsPageInterface {
+
     boolean sportsLogoExists();
-    
+
     String sportsPageUrl();
 }

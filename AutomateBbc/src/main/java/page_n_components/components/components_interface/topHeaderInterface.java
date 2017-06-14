@@ -6,10 +6,9 @@
 package page_n_components.components.components_interface;
 
 /**
- *
  * @author christiann
  */
-public interface topHeaderInterface {
+public interface TopHeaderInterface {
 
     void clickMoreMenuSection(MoreMenuSections subHeaderType);
 

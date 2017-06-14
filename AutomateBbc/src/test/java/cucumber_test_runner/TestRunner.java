@@ -6,7 +6,6 @@
 package cucumber_test_runner;
 
 /**
- *
  * @author christiann
  */
 
@@ -24,7 +23,7 @@ import org.junit.runner.RunWith;
         },
         monochrome = true,
         features = "src/test/resources/features",
-        glue = {"steps_definition" ,"utils"}
+        glue = {"steps_definition", "utils"}
 )
 @RunWith(Cucumber.class)
 public class TestRunner {

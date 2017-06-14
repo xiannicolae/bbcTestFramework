@@ -8,31 +8,25 @@ package page_n_components.pages.page_implementation;
 import driver.DriverInteractions;
 import driver.DriverUtils;
 import org.openqa.selenium.By;
-import page_n_components.components.components_implementation.topHeaderImpl;
-import page_n_components.pages.page_interface.homePageInterface;
-import page_n_components.components.components_interface.topHeaderInterface;
+import page_n_components.components.components_implementation.TopHeaderImpl;
+import page_n_components.pages.page_interface.HomePageInterface;
+import page_n_components.components.components_interface.TopHeaderInterface;
 
-import static page_n_components.components.components_interface.topHeaderInterface.MainMenuSections.*;
+import static page_n_components.components.components_interface.TopHeaderInterface.MainMenuSections.*;
 
 /**
  * @author christiann
  */
-public class homePageImpl implements homePageInterface {
+public class HomePageImpl implements HomePageInterface {
 
-    protected static final String BBC_URL = "http://www.bbc.com/";
-    protected static final By HOMEPAGE_TITLE = By.cssSelector("section[data-wwhp-module='header'] h2");
-    DriverInteractions di = new DriverInteractions();
-    DriverUtils du = new DriverUtils();
-    topHeaderInterface topHeaderInterface = new topHeaderImpl();
+    private static final String BBC_URL = "http://www.bbc.com/";
+    private static final By HOMEPAGE_TITLE = By.cssSelector("section[data-wwhp-module='header'] h2");
+    private final DriverInteractions di = new DriverInteractions();
+    private final DriverUtils du = new DriverUtils();
 
     @Override
     public void goToHomePage() {
         du.goToUrl(BBC_URL);
-    }
-
-    @Override
-    public void goToSportsPage() {
-        topHeaderInterface.clickMenuSection(SPORT);
     }
 
     @Override
