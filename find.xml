@@ -1,9 +1,9 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="File '[AutomateBbc] - ...\src\test\resources\features\weather\WeatherSection.feature'" />
-    <option name="defaultScopeName" value="File '[AutomateBbc] - ...\src\test\resources\features\weather\WeatherSection.feature'" />
+    <option name="customScope" value="File '[AutomateBbc] - ...\src\test\resources\features\earth\EarthPage.feature'" />
+    <option name="defaultScopeName" value="File '[AutomateBbc] - ...\src\test\resources\features\earth\EarthPage.feature'" />
     <option name="localCaseSensitive" value="true" />
     <option name="LOCAL_CASE_SENSITIVE_SEARCH" value="true" />
-    <option name="SEARCH_SCOPE" value="File '[AutomateBbc] - ...\src\test\resources\features\weather\WeatherSection.feature'" />
+    <option name="SEARCH_SCOPE" value="File '[AutomateBbc] - ...\src\test\resources\features\earth\EarthPage.feature'" />
   </component>
 </application>
