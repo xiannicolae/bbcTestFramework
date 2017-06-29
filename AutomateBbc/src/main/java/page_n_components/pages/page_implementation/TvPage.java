@@ -14,7 +14,7 @@ public class TvPage implements BasePage {
 
 
     public boolean tvBrandExists() {
-        return DriverInteractions.existsElement(TV_BRAND);
+        return DriverInteractions.isLocatorDisplayed(TV_BRAND);
     }
 
     @Override

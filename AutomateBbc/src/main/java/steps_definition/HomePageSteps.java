@@ -14,7 +14,7 @@ public class HomePageSteps {
 
     private HomePage homePage = new HomePage();
 
-    @Given("^I am on the BBC Home page$")
+    @Given("^User is on the BBC Home page$")
     public void goOnTheHomePage() {
         homePage.goToHomePage();
 

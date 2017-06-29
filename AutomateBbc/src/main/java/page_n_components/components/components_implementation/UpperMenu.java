@@ -67,6 +67,11 @@ public class UpperMenu implements BaseComponent {
             case SPORT:
                 clickOnSportsMenu();
                 break;
+            case WEATHER:
+                clickOnWeatherMenu();
+                break;
+            case EARTH:
+                clickOnEarthMenu();
             case MORE:
                 clickOnMoreMenu();
                 break;
@@ -74,6 +79,7 @@ public class UpperMenu implements BaseComponent {
                 throw new IllegalArgumentException(mainMenu + " method is not implemented yet!");
         }
     }
+
 
     public void clickMoreMenuSection(MoreMenuSections moreMenu) {
         switch (moreMenu) {
@@ -90,9 +96,19 @@ public class UpperMenu implements BaseComponent {
         DriverInteractions.clickOn(SPORT_MENU);
     }
 
+    private void clickOnWeatherMenu() {
+        DriverInteractions.waitFor(WEATHER_MENU);
+        DriverInteractions.clickOn(WEATHER_MENU);
+    }
+
     private void clickOnMoreMenu() {
         DriverInteractions.waitFor(MORE_MENU);
         DriverInteractions.clickOn(MORE_MENU);
+    }
+
+    private void clickOnEarthMenu() {
+        DriverInteractions.waitFor(EARTH_MENU);
+        DriverInteractions.clickOn(EARTH_MENU);
     }
 
     private void clickOnMoreMenuTV() {

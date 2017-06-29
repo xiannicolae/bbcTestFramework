@@ -17,12 +17,12 @@ import org.junit.runner.RunWith;
  * Created by jgarcia on 10/06/16.
  */
 @CucumberOptions(
-        plugin = {"pretty",
-                "html:target/cucumber/cucumber-html-report",
-                "json:target/cucumber/cucumber-automation-report.json"
+        strict = false,
+        format = {"pretty",
+                "json:target/cucumber.json"
         },
         monochrome = true,
-        features = "src/test/resources/features",
+        features = "src/test/resources/features/",
         glue = {"steps_definition", "utils"}
 )
 @RunWith(Cucumber.class)

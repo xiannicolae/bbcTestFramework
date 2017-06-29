@@ -11,13 +11,12 @@ import static junit.framework.Assert.assertTrue;
  */
 public class TvPageSteps {
 
-    private final DriverUtils driverUtils = new DriverUtils();
     private final TvPage tvPage = new TvPage();
 
 
-    @Then("^I should be redirected to the TV page$")
+    @Then("^User should be redirected to the TV page$")
     public void checkIfOnTvPage() {
-        assertTrue(tvPage.getUrl().matches(driverUtils.getCurrentPageUrl()));
+        assertTrue(tvPage.getUrl().matches(DriverUtils.getCurrentPageUrl()));
         assertTrue(tvPage.tvBrandExists());
     }
 }

@@ -11,16 +11,16 @@ import static page_n_components.components.components_implementation.UpperMenu.*
  */
 public class UpperHeaderSteps {
 
-    private final UpperMenu upperMenu = new UpperMenu();
+    private static final UpperMenu upperMenu = new UpperMenu();
 
 
-    @When("^I click '(HOME|NEWS|SPORT|WEATHER|SHOP|EARTH|TRAVEL|CAPITAL|MORE)' on the upper navigation bar$")
-    public void clickOnUpperNav(MainMenuSections headerType) {
+    @When("^User clicks '(HOME|NEWS|SPORT|WEATHER|SHOP|EARTH|TRAVEL|CAPITAL|MORE)' on the upper navigation bar$")
+    public static void clickOnUpperNav(MainMenuSections headerType) {
         upperMenu.clickMenuSection(headerType);
     }
 
-    @And("^On More section I click on '(CULTURE|AUTOS|FUTURE|TV|RADIO|CBBC|CBEEBIES|FOOD|IWONDER|BITESIZE|MUSIC|ARTS|MAKE_IT_DIGITAL|TASTER|NATURE|LOCAL)'$")
-    public void clickOnMoreMenuNav(MoreMenuSections subHeaderType) {
+    @And("^On More section user clicks on '(CULTURE|AUTOS|FUTURE|TV|RADIO|CBBC|CBEEBIES|FOOD|IWONDER|BITESIZE|MUSIC|ARTS|MAKE_IT_DIGITAL|TASTER|NATURE|LOCAL)'$")
+    public static void clickOnMoreMenuNav(MoreMenuSections subHeaderType) {
         upperMenu.clickMoreMenuSection(subHeaderType);
     }
 }
