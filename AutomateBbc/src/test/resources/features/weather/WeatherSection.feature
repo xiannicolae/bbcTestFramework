@@ -1,4 +1,4 @@
-Feature: Testing the BBC Weather page
+Feature: BBC Weather page
 
   Background:
     Given User is on the BBC Home page

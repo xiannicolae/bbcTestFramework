@@ -1,4 +1,4 @@
-Feature: Testing the BBC Earth page
+Feature: BBC Earth page
 
   Background:
     Given User is on the BBC Home page
