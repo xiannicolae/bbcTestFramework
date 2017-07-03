@@ -1,4 +1,4 @@
-Feature: Testing the BBC TV page
+Feature: BBC TV page
 
   Background:
     Given User is on the BBC Home page

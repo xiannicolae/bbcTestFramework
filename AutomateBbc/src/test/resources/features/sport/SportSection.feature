@@ -1,4 +1,4 @@
-Feature: Testing the BBC Sport page
+Feature: BBC Sport page
 
   Background:
     Given User is on the BBC Home page
