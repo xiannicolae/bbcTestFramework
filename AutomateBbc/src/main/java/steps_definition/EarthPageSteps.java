@@ -17,6 +17,7 @@ import static page_n_components.components.components_implementation.UpperMenu.M
 /**
  * Created by christiann on 23/06/2017.
  */
+
 public class EarthPageSteps {
 
     private final EarthPage earthPage = new EarthPage();

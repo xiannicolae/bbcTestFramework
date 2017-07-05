@@ -13,7 +13,6 @@ public class UpperHeaderSteps {
 
     private static final UpperMenu upperMenu = new UpperMenu();
 
-
     @When("^User clicks '(HOME|NEWS|SPORT|WEATHER|SHOP|EARTH|TRAVEL|CAPITAL|MORE)' on the upper navigation bar$")
     public static void clickOnUpperNav(MainMenuSections headerType) {
         upperMenu.clickMenuSection(headerType);
