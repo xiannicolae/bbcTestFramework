@@ -11,10 +11,7 @@ package cucumber_test_runner;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
-import org.junit.AfterClass;
 import org.junit.runner.RunWith;
-
-import static junit.framework.TestCase.fail;
 
 /**
  * Created by jgarcia on 10/06/16.
@@ -31,14 +28,5 @@ import static junit.framework.TestCase.fail;
 )
 @RunWith(Cucumber.class)
 public class TestRunner {
-    private static int i = 0;
 
-    @AfterClass
-    public static void testBefore() {
-//        System.out.println("Before test");
-//        i++;
-//        if (i < 2) {
-//            fail("Fail");
-//        }
-    }
 }
